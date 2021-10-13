@@ -1,0 +1,502 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300&display=swap" rel="stylesheet">
+
+    <style>
+
+        #htmlcontent{
+            border:1px solid black;
+            width:800px;
+            font-size:20px;
+        }
+
+        #csscontent{
+            border:1px solid black;
+            width:800px; 
+            font-size:20px;
+        }
+
+        .note {
+            margin-left: 40px;
+        }
+
+        body {
+            background-color: white;
+        }
+
+        video {
+            height: 400px;
+            width: 700px;
+            border: 1px solid black;
+            margin-top: 20px;
+        }
+
+        li {
+            margin-top: 20px;
+            margin-left: 45px;
+            font-size: 25px;
+        }
+
+            li.special {
+                margin-top: 20px;
+                margin-left: 85px;
+                font-size: 25px;
+            }
+
+        .number-list{
+            margin-top:0px;
+        }
+
+        .gif-container{
+            border:0px solid black;
+            margin: 0px auto;
+            height:450px;
+            width:750px;
+        }
+
+        #gifs{
+            height:550px;
+            width:700px;
+            margin-bottom:0px;
+            border:0px solid black;
+            
+        }
+
+        #gifsLarger{
+            height:750px;
+            width: 800px;
+        }
+
+        
+
+        * {
+            font-family: 'Source Sans Pro';
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background-color: white;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .left-pane {
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            border: 0px solid black;
+            background-color: lightgoldenrodyellow;
+            height: 100%;
+        }
+
+        .left-pane-heading{
+            padding:8px;
+            font-size:25px;
+        }
+
+            .left-pane a {
+                text-decoration: none;
+                font-size: 20px;
+                padding: 5px;
+                color:black;
+                
+            }
+
+                .left-pane a p {
+                    padding: 3px;
+                    font-weight: 200;
+                }
+
+                .left-pane a.subtitle {
+                    margin-left: 10px;
+                    color: black;
+                }
+
+
+        .right-pane {
+            border: 0px solid black;
+            width: 70%;
+            margin-left: 320px;
+        }
+
+            .right-pane .section1 {
+                height: auto;
+            }
+
+            .right-pane .section2 {
+                height: auto;
+            }
+
+            .right-pane .section3 {
+                height: auto;
+            }
+
+            .right-pane .section4 {
+                height: auto;
+            }
+
+            section h1{
+                font-size:40px;
+            }
+
+            section h2{
+                font-size:30px;
+                margin-top:30px;
+                font-weight:300;
+            }
+
+            section p{
+                margin-top:20px;
+                font-size:25px;
+                letter-spacing:0.2px;
+                line-height:45px;
+            }
+
+
+        #content {
+            border: 1px solid black;
+            width: 420px;
+            margin: 30px auto;
+            position:relative; 
+        }
+
+        p code{
+            padding:15px;
+            font-size:20px;
+            margin-bottom:0px;
+        }
+
+        #section6{
+            position:relative; 
+        }
+
+        .btn{
+            position:absolute; 
+            right:328px;
+            top:50px;
+            padding:3px;
+        }
+
+        .images{
+            border:1px solid black;
+            margin-top:20px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="left-pane">
+            <h3 class="left-pane-heading">Table Of Contents</h3>
+
+            <a href="#section2"><p>Create A Simple Server</p></a>
+            <a href="#section3"><p>Rendering HTML Form</p></a>
+            <a href="#y" class="subtitle"><p>app.use(express.static('public'))</p></a>
+            <a href="#x" class="subtitle"><p>index.html File Rendering</p></a>
+            <a href="#section4"><p>Creating The HTML Form</p></a>
+            <a href="#section5"><p>How HTML Form Works?</p></a>
+            <a href="#section101"><p>How Express Server Handles<br />Submitted Data?</p></a>
+            <a href="#enabling" class="subtitle"><p>Enabling Server to Read the <br />Data Being Submitted</p></a>
+            <a href="#receiving" class="subtitle"><p>Receiving the Data Being Submitted</p></a>
+            <a href="#logging" class="subtitle"><p>Console Logging Form Data</p></a>
+        </div>
+
+        <div class="right-pane">
+
+            <section class="section1">
+                <h1>Web Server Basics: How to Submit Form Data to Server? </h1>
+                <p>In this blog post, let’s take a look at how we can submit (or send) data to our server using a html form. So basically we’ll be sending data from frontend to the backend. And our server will then acknowledge the reception of data by responding with a simple message. </p>
+                <p>Let’s get started. </p>
+                <video controls autoplay loop style="width:900px;">
+                    <source src="videos/blogSix_videoOne.mp4" type="video/mp4" />
+                </video>
+
+                <h2><b>Prerequisites</b></h2>
+                <p>You should know how to initialize express project/setup a simple express server. If not, refer to <this> article. </p>
+                <br />
+            </section>
+
+            <br />
+
+            
+
+
+            <section class="section2" id="section2">
+                <h1>
+                    Create A Simple Server
+                </h1>
+                <p>
+                    You already know this. Refer the video clip below to refresh your memory and setup an express server.
+                </p>
+
+                <video controls autoplay loop>
+                    <source src="videos/simpleserver.mp4" type="video/mp4" />
+                </video>
+            </section>
+            <br /><br />
+                  <section class="section3" id="section3">
+                      <h1>Rendering HTML Form Using Express Server</h1>
+
+                      <p>First you have to configure express server such that starts serving html pages. To do this, you have to include the following line of code in your index.js file.</p>
+
+
+                      <video controls autoplay loop>
+                          <source src="videos/blogSix_videoTwo.mp4" type="video/mp4" />
+                      </video>
+
+
+                      <h2 id="y">
+                          <b>What does app.use(express.static('public')); do?</b>
+                      </h2>
+                      <ol>
+                          <li>It makes the app variable (which is our server) use a middleware called static. </li>
+                          <li>static is responsible for serving html pages from the server. </li>
+                          <li>What is public then? Public is the location (folder) from where the html page needs to be served. </li>
+                          <li>So we now have to create a folder called public and place the html page in it. </li>
+                      </ol>
+                      <video controls autoplay loop>
+                          <source src="videos/blogSix_videoThree.mp4" type="video/mp4" />
+                      </video>
+
+                      <p><b>Note:</b> Whenever you come across app.use() statement, it means you are using an express middleware. Express middleware is simply a function that does something for us. So static middleware is basically a built-in express function for rendering static html pages.</p>
+                      <p>To know more about express.static middleware, read [this].</p><p> To know more about express middleware in general, read [this]. </p>
+
+                      <h2 id="x">
+                          <b>Testing Whether index.html File Renders</b>
+                      </h2>
+
+                      <p><b>Note:</b> Before doing this, ensure you add some html content in your index.html. </p>
+                      <video controls autoplay loop>
+                          <source src="videos/blogSix_videoFour.mp4" type="video/mp4" />
+                      </video>
+
+
+                      <ol>
+                          <li>Restart your server using node index.js command. Try accessing it @ http://localhost:3000/ </li>
+
+                          <li>Our html page gets rendered. Even without us configuring a specific GET route for its rendering. </li>
+
+                          <li>This is because our static middleware creates a <a href="#">http://localhost:3000/index.html</a> link and serves it at the ‘<a href="#" style="text-decoration:none;">/</a>’ (root route) by default in our server. </li>
+                      </ol>
+                      <p><b>Note:</b> Try accessing <a href="#">http://localhost:3000/index.html</a>. You'll notice that this too works.</p>
+
+                  </section>
+            <br />
+
+            <section class="section4" id="section4">
+                <h1>Creating the HTML Form</h1>
+                <p>It’s time to create our html form. Here’s the code for it.</p>
+                <section class="section6" id="section6">
+                    
+
+                    <button id="btn" class="btn">Click To Copy</button>
+
+                    <div id="htmlcontent" contenteditable="true">
+                        <xmp>
+                            <div class="form-container">
+                                <h1>Login</h1>
+                                <form action="/" method="POST">
+                                    <div class="form-control">
+                                        <label for="username">Email</label>
+                                        <input type="text" name="email" autocomplete="off" />
+                                    </div>
+                                    <div class="form-control">
+                                        <label for="email">Password</label>
+                                        <input type="password" name="password" autocomplete="off" />
+                                    </div>
+                                    <button type="submit">Submit</button>
+                                </form>
+                            </div>
+                       </xmp>
+                        
+                    </div>
+                    </section>
+                <p>If you observe our html code, you’ll realize that it is linked to a style.css file. This .css file too has to go into the same public folder. Here’s the code for it. </p>
+                <section class="section6" id="section6">
+
+
+                    
+
+                    <div id="csscontent" contenteditable="true">
+                        <xmp>
+                            body
+                            {
+                            background-color: white;
+                            }
+
+                            *{
+                            font-family: 'Segoe UI';
+                            }
+
+                            h2{
+                            text-align:center;
+                            }
+
+                            .form-container{
+                            border:1px solid black;
+                            margin:50px auto;
+                            padding:25px;
+                            width:300px;
+                            height:270px;
+                            border-radius:15px;
+                            display:flex;
+                            flex-direction:column;
+                            }
+
+                            h1{
+                            text-align:center;
+                            }
+
+                            form{
+                            padding:5px;
+                            border:0px solid black;
+                            width:100%;
+                            border-radius:15px;
+                            }
+
+                            .form-control{
+                            margin:5px;
+                            }
+
+                            input{
+                            font-size:15px;
+                            display: block;
+                            width:90%;
+                            margin-top:5px;
+                            }
+
+                            label{
+                            margin-bottom:10px;
+                            font-weight:700;
+
+                            }
+
+                            button{
+                            margin:20px 5px;
+                            width:90%;
+                            height:30px;
+                            }
+                        </xmp>
+                    </div>
+                </section> 
+                <p>Save both the files and restart your server using node index.js command and you’ll see a decent looking html form getting served at <a href="#">http://localhost:3000/ </a></p>
+                
+                
+                </section>
+
+                <br />
+                <section class="section5" id="section5">
+                    <h1>How HTML Form Works?</h1>
+                    <video controls autoplay loop>
+                        <source src="videos/blogSix_videoFive.mp4" type="video/mp4" />
+                    </video>
+                    <p>2 form attributes (method and action) play a crucial role in sending data to our server.</p>
+                    <ol>
+                        <li><b>method</b> defines what our form is going to do. </li>
+                        <ul>
+                            <li class="special">In our case, it’s going to post (send) data to server.</li>
+                            <li class="special"> Therefore we define it as POST (note the all caps rule). </li>
+                        </ul>
+                        <li><b>action</b> defines where our form data is going to be posted to. </li>
+                        <ul>
+                            <li class="special">In our case, it’s the home or root route(’/’).</li>
+                            <li class="special">Therefore we define it as ‘/’.</li>
+                        </ul>
+                    </ol>
+
+
+
+
+
+
+
+                </section>
+                <br />
+                <section class="section6" id="section101">
+                    <h1>How Express Server Handles Submitted Data? </h1>
+                    <p>2 things need to be done to allow our server to receive the form data. </p>
+                    <ol>
+                        <li class="special">Enable our server to read the data being submitted and </li>
+                        <li class="special">Set up a route for receiving the data being submitted  </li>
+                    </ol>
+
+
+                    <h2 id="enabling"><b>Enabling Our Server To Read The Data Being Submitted</b></h2>
+                    <video controls autoplay loop>
+                        <source src="videos/blogSix_videoSix.mp4" type="video/mp4" />
+                    </video>
+                    <ol>
+                        <li>The request object (req of app.get(’/’) route discussed in [this blog] has many properties associated with it. One of them is req.body.</li>
+                        <li> req.body is responsible for carrying the data to be submitted to the server.  </li>
+                        <li>So whenever we submit data to server using html forms, it’s this req.body that carries the submitted details and hands over them to the server for further processing.   </li>
+                        <li> But to read what’s in the req.body, our express server needs the help of another middleware: express.urlencoded({ extended: true })</li>
+                        <li>So include the line of code (as shown in the video clip) to enable express to read the form data.</li>
+                    </ol>
+                    <br />
+                    <h2 id="receiving"><b>Setup a Route for Receiving the Data Being Submitted </b></h2>
+                    <video controls autoplay loop>
+                        <source src="videos/blogSix_videoSeven.mp4" type="video/mp4" />
+                    </video>
+                    <ol>
+                        <li>Now with express, everything happens through routes. If we are to serve some data (like a webpage) to the users, we need a separate route for it (known as get route). If we are to receive some data from the users (like through a form), we need a separate route for it (known as post route). </li>
+                        <li> In our case, we need a post route that allows the html form to submit (or post) its data to our server. So let’s create one as shown in the video clip.  </li>
+                        <p class="note"><b>Note:</b> Express routes are simply paths that enable data transfer between the server and the browser.</p>
+                        <li>Now restart your server and try submitting the form.   </li>
+                        <li> You’ll notice our server is trying to process something (indicated by the loader icon) but is unable to. </li>
+                        <li>This is because our app.post() route is empty. So let’s make it do something. Let’s add some code. </li>
+                        <li>We know req.body contains the form details. Let’s try console logging this information that the app.post() route gets hold of. </li>
+                        <video controls autoplay loop id="logging">
+                            <source src="videos/blogSix_videoEight.mp4" type="video/mp4" />
+                        </video>
+                        <li>You’ll notice that the form details get console logged successfully. In other words, the contents of req.body object gets console logged successfully.</li>
+                        
+                    </ol>
+                    <p>We finally got our form to submit data to the express server! Congrats!</p>
+                </section>
+
+
+</div>
+    </div>
+
+    <script>
+        var content = document.querySelector('#htmlcontent');
+        var btn = document.querySelector('#btn');
+
+        btn.addEventListener('click', copyText);
+
+        function copyText() {
+            let temp = content.innerText;
+            copytoClipBoard(temp);
+
+        }
+
+        function copytoClipBoard(str) {
+            const textarea = document.createElement("textarea");
+            textarea.value = str;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand("copy");
+            document.body.removeChild(textarea);
+            //output.innerHTML = "<h3>Copied content</h3>" + textarea.value;
+            alert('copied!')//output.innerHTML = "<h3>Copied content</h3>" + textarea.value;
+
+        }
+
+        console.log(content)
+    </script>
+
+
+
+</body>
+</html>
